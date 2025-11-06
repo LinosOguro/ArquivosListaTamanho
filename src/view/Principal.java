@@ -13,7 +13,10 @@ public class Principal {
 		String dir = "C:\\Windows";
 		
 		try {
-			lisCont.readDir(dir);
+			List<String> result = lisCont.readDir(dir);
+			for (String linha : result) {
+				System.out.println(linha);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

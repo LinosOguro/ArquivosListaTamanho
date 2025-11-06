@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface IListaController {
 
-	public void readDir(String path) throws IOException;
+	public List<String> readDir(String path) throws IOException;
 }
