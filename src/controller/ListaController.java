@@ -56,7 +56,7 @@ public class ListaController implements IListaController {
 							
 						}
 
-						if (t1 > t2) {
+						if (t1 < t2) {
 							String aux = lista.get(i);
 							lista.set(i, lista.get(j));
 							lista.set(j, aux);
@@ -91,4 +91,5 @@ public class ListaController implements IListaController {
 	*/
 
 }
+
 
