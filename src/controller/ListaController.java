@@ -41,7 +41,6 @@ public class ListaController implements IListaController {
 					String[] p1 = s1.split(" - ");
 					String[] p2 = s2.split(" - ");
 
-					// Verifica se tem o tamanho no texto
 					if (p1.length == 2 && p2.length == 2) {
 
 						String n1 = p1[1].replace(" MB", "").replace(",", ".");
@@ -74,9 +73,22 @@ public class ListaController implements IListaController {
 	}
 
 	/*
-	 * private double getDirSize(File dir) { long sizeBytes = 0; File[] files =
-	 * dir.listFiles(); if (files != null) { for (File f : files) { if (f.isFile())
-	 * { sizeBytes += f.length(); } else if (f.isDirectory()) { sizeBytes +=
-	 * getDirSize(f); } } } return sizeBytes / (1024.0 * 1024.0); }
-	 */
+	// Pega o tamanho do diretório
+	
+	 private double getDirSize(File dir) { 
+	 	long sizeBytes = 0; File[] files = dir.listFiles(); 
+	 	if (files != null) { for (File f : files) { 
+	 		if (f.isFile()) { 
+				sizeBytes += f.length(); 
+			} else if (f.isDirectory()) { 
+				sizeBytes += getDirSize(f); 
+			} 
+		} 
+	} 
+
+	return sizeBytes / (1024.0 * 1024.0); 
+	}
+	*/
+
 }
+
